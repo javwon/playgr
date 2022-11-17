@@ -19,10 +19,18 @@ public class play {
 		
 		Scanner scanner =new Scanner(System.in);
 		play Max_days = new play();
-		Max_days.printSample();
+		int counter =0;
+		
+		System.out.println("반복횟수를 입력하세요");
+		counter = scanner.nextInt();
+		for(int i=0;i<counter;i++)
+		{	
 		System.out.println("달을 입력하세요");
 		int month = scanner.nextInt();
 		System.out.printf("%d월은 %d일까지 있습니다 %n",month,Max_days.maxday(month));
+		
+		}
+//		Max_days.printSample();
 		scanner.close();
 	}
 
