@@ -1,7 +1,12 @@
 import java.util.*;
 public class play {
-
-	public static void main(String[] args) {
+	private static final int[] MONTH_DAYS = {31,28,31,30,31,30,31,31,30,30,31,31};
+	public int maxday(int i)
+	{
+		return MONTH_DAYS[i-1];
+	}
+	public void printSample()
+	{
 		System.out.println(" 일  월   화   수   목   금   토");
 		System.out.println("--------------------");
 		System.out.println(" 1  2  3  4  5  6  7");
@@ -9,13 +14,16 @@ public class play {
 		System.out.println("15 16 17 18 19 20 21");
 		System.out.println("22 23 24 25 26 27 28");
 		
-		int[] month_day = {31,28,31,30,31,30,31,31,30,30,31,31};
-		Scanner input1 = new Scanner(System.in);
-		System.out.println("달을 입력하세요");
-		int i = input1.nextInt();
-		System.out.printf("%d달의 일수는 %d입니다. ",i,month_day[(i-1)%12]);
+	}
+	public static void main(String[] args) {
 		
-		input1.close();
+		Scanner scanner =new Scanner(System.in);
+		play Max_days = new play();
+		Max_days.printSample();
+		System.out.println("달을 입력하세요");
+		int month = scanner.nextInt();
+		System.out.printf("%d월은 %d일까지 있습니다 %n",month,Max_days.maxday(month));
+		scanner.close();
 	}
 
 }
