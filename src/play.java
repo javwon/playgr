@@ -9,7 +9,13 @@ public class play {
 		System.out.println("15 16 17 18 19 20 21");
 		System.out.println("22 23 24 25 26 27 28");
 		
-	
+		int[] month_day = {31,28,31,30,31,30,31,31,30,30,31,31};
+		Scanner input1 = new Scanner(System.in);
+		System.out.println("달을 입력하세요");
+		int i = input1.nextInt();
+		System.out.printf("%d달의 일수는 %d입니다. ",i,month_day[(i-1)%12]);
+		
+		input1.close();
 	}
 
 }
