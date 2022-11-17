@@ -7,17 +7,24 @@ public class Prompt {
 	public void runPrompt(){
 		Scanner scanner =new Scanner(System.in);
 		play Max_days = new play();
-		
+		Scanner ds = new Scanner(System.in);
 		while(true)
 		{	
-		
-		System.out.println("달을 입력하세요(-1이면 종료)");
+		System.out.println("\n년도를 입력하세요");
+		System.out.print(PROMPT);
+		int year = scanner.nextInt();
+		System.out.println("\n달을 입력하세요(-1이면 종료)");
 		System.out.print(PROMPT);
 		int month = scanner.nextInt();
 		
+		System.out.println("\n 시작하는 날짜를 입력하세요");
+		System.out.print(PROMPT);
+		String day = ds.nextLine();
+		
 		if(month>=1 && month <=12)
-		{Max_days.printSample(2022,month);
-		System.out.printf("%n %d월은 %d일까지 있습니다 %n",month,Max_days.maxday(month));
+			
+		{
+			Max_days.printSample(year,month,day);
 		}
 		else if (month == -1)
 			break;
@@ -27,6 +34,7 @@ public class Prompt {
 		System.out.println("bye~");
 //		Max_days.printSample();
 		scanner.close();
+		ds.close();
 	}
 	
 	public static void main(String[] args) {
