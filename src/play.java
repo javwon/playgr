@@ -19,17 +19,24 @@ public class play {
 		
 		Scanner scanner =new Scanner(System.in);
 		play Max_days = new play();
-		int counter =0;
+		String Prompt ="cal > ";
 		
-		System.out.println("반복횟수를 입력하세요");
-		counter = scanner.nextInt();
-		for(int i=0;i<counter;i++)
+		while(true)
 		{	
-		System.out.println("달을 입력하세요");
-		int month = scanner.nextInt();
-		System.out.printf("%d월은 %d일까지 있습니다 %n",month,Max_days.maxday(month));
 		
+		System.out.println("달을 입력하세요(-1이면 종료)");
+		System.out.print(Prompt);
+		int month = scanner.nextInt();
+		if(month>=1 && month <=12)
+		{
+		System.out.printf("%d월은 %d일까지 있습니다 %n",month,Max_days.maxday(month));
 		}
+		else if (month == -1)
+			break;
+		else
+			continue;
+		}
+		System.out.println("bye~");
 //		Max_days.printSample();
 		scanner.close();
 	}
