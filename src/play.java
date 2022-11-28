@@ -57,7 +57,7 @@ public class play {
 		//기준날짜 요일 알아내기 1970 1월 1일 
 		int syear = 1970;
 
-		final int sweekday = 3;//목요일
+		final int sweekday = 4;//목요일
 		
 		int count =0;
 		//년 더하기 
@@ -73,7 +73,7 @@ public class play {
 			count += delta;
 		}
 		//남은 날짜 더하기
-		count += day;
+		count += day-1;
 		int weekday = (count+sweekday) %7; //목요일이 기준요일이므로.. 며칠 지났는지가 궁금한게 아니라
 		//몇 요일인지가 궁금한것 따라서 0->3 목요일임 4(1+3) 목요일 +1 이런식으로 생각하는 것 
 		return weekday;
