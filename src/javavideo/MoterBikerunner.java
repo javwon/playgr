@@ -9,10 +9,17 @@ public class MoterBikerunner {
 		honda.start();
 		
 		ducati.setSpeed((short)100);
-//		honda.setSpeed((short)10);
-//		System.out.println(ducati.getSpeed());
-//		System.out.println(honda.getSpeed());
+		//중복제거 public method
+		ducati.increaseSpeed(100);
+		honda.increaseSpeed(100);
+		//speed를 올리는 기본적인 로직
+		int ducatiSpeed = ducati.getSpeed();
+		ducatiSpeed += 100;
+		ducati.setSpeed((short)ducatiSpeed);
 		
+		int hondaSpeed = honda.getSpeed();
+		hondaSpeed += 100;
+		honda.setSpeed((short)hondaSpeed);
 		
 		
 		book artofComputerProgramming = new book();
