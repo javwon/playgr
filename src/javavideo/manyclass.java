@@ -1,18 +1,38 @@
 package javavideo;
 
+import java.math.BigDecimal;
+import java.util.Arrays;
+
 public class manyclass {
 	public static void main(String[] args) {
+	Student stu1 = new Student("han",95,98,12,45,46);	
+	
+	Student stu2 = new Student("adam",97,98);
+	
+	int num = stu1.getNumberofMarks();
+	int sum = stu1.getTotal();
+	int maxi = stu1.maximunMark();
+	int mini = stu1.minimunnMark();
+	BigDecimal average = stu1.getaverage();
+	
+	System.out.println(num+" "+sum+" "+maxi+ " " + mini+ " " + average);
+	
+	
+	String[] dayOfweek = {"Sunday","Monday","Tuesday","Wednesday","Thutsday","Friday","Saturday"};
+	
+	String longest=dayOfweek[0];
+	for(String a:dayOfweek)
+		{if(longest.length()<a.length())
+			longest = a;
+		}
+		System.out.println(longest);
 		
-		int i = 5;
-		Integer integer = new Integer(5); //생성자사용하거나
+		for(int i=0; i<(int)dayOfweek.length/2;i++)
+		{String temp = dayOfweek[i]; 
+		dayOfweek[i] = dayOfweek[dayOfweek.length-1-i];
+		dayOfweek[dayOfweek.length-1-i]=temp;}
+	
 		
-		Integer interger2= Integer.valueOf(5); //static method 사용하기
-		
-		Integer interger3 = Integer.valueOf("1234");
-		
-		System.out.println(interger2);
-		
-		
-		
+		System.out.println(Arrays.toString(dayOfweek));
 	}
 }
