@@ -34,5 +34,6 @@ public class manyclass {
 	
 		
 		System.out.println(Arrays.toString(dayOfweek));
+		System.out.println(s);
 	}
 }
