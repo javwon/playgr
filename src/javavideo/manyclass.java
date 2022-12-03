@@ -49,6 +49,9 @@ public class manyclass {
 		System.out.println(me);
 		
 		
+		mama aa = new mama();
+		aa.print();
+	
 		
 		
 	}

@@ -6,7 +6,9 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class manyrun {
-	
+	public me bb = new me();
+	public int a =10;
+	protected int aaa =11;
 }
 
 class Student 
@@ -99,4 +101,26 @@ class Student
 //	public int[] MarksGetter() {return this.marks;}
 	
 }
+class me{
+	
+	protected int th;
+	int b =10;
+	me(){this(1);}
+	me(int a){this.th=a;}
+}
+
+class mama extends me{
+	int a = 10;
+	
+	
+	
+	void print() {
+		
+		System.out.println(this.a);
+		System.out.println(super.th);
+	}
+}
+
+
+
 
