@@ -1,6 +1,7 @@
 package javavideo;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class manyclass {
@@ -34,6 +35,21 @@ public class manyclass {
 	
 		
 		System.out.println(Arrays.toString(dayOfweek));
-		System.out.println(s);
+		
+		System.out.println(stu1);
+//		System.out.println(Arrays.toString(stu1.MarksGetter()));
+//		stu1.addNewMark(35);
+//		System.out.println(Arrays.toString(stu1.MarksGetter()));
+//		stu1.removeMarkAtIndex(1);
+//		System.out.println(Arrays.toString(stu1.MarksGetter()));
+		
+		ArrayList me = new ArrayList();
+		me.add("hi");
+		me.add(1);
+		System.out.println(me);
+		
+		
+		
+		
 	}
 }
