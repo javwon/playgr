@@ -9,9 +9,4 @@ public class dsasad {
 	}
 
 }
-class pr extends manyrun {
-	
-	pr(){
-		super.aaa;
-	}
-}
+
