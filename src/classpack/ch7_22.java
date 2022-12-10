@@ -7,7 +7,7 @@ public class ch7_22 {
 		b.buyProduct(new TvP());
 		b.buyProduct(new Computer1());
 		b.buyProduct(new Audio());
-		b.summery();
+		b.summary();
 
 	}
 
@@ -48,8 +48,8 @@ public String toString() {return "Adio";}
 class Buyer1{
 	int money =1000;
 	int bonusPoint =0;
-	int sum=0;
-	Product11[] p = new Product11[3];
+	int i=0;
+	Product11[] p = new Product11[10];
 	void buyProduct(Product11 product)
 	{	
 		if(this.money<product.price) {System.out.println("잔액이 부족합니다.");}
@@ -57,31 +57,28 @@ class Buyer1{
 			money -= product.price;
 			this.bonusPoint += product.bonusPoint;
 			System.out.println(product + "을/를 구입했습니다.");
-			sum += product.price;
-			addProduct(product);
+			p[i++]=product; //추가하기 
 		}
 		
 		
 		}
 	
-	private void addProduct(Product11 product) {
-		int n=0;
-		for(int i=0; i<p.length;i++,n++)
-			if(p[i] == null) break;
-		
-		Product11[] temp = {product};
-		System.arraycopy(temp, 0, p, n, 1);
-		
-	}
 
-	void summery() {
-		
-		System.out.println("구입하신 총 금액은 :" +this.sum+" 이고,"+"남은 잔액은"+this.money+"입니다.");
-		System.out.println("구입 하신 목록은 ");
+	void summary() {
+		int sum =0; //summary처리 
+		String itemlist ="";
 		for(int i=0; i<p.length;i++)
-			System.out.print(p[i]+",");
-		System.out.print("입니다.");
-		System.out.println("잉잉");
+		{
+			if(p[i] == null)break;
+			else {
+				sum += p[i].price;
+				itemlist +=p[i].toString()+", ";
+			}
+		}
+		System.out.println("구입하신 총 금액은 :" +sum+" 이고,"+"남은 잔액은"+this.money+"입니다.");
+		System.out.println("구입 하신 목록은 "+itemlist+"입니다.");
+	
+		
 	}
 	
 }
