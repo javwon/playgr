@@ -57,8 +57,8 @@ class StudaDeck{
 }
 
 class StudaCard5{
-	int num;  //덱에 포함되는 멤버 덱 안에서 통해서 초기화됨 
-	boolean isKwang;
+	final int num;  //덱에 포함되는 멤버 덱 안에서 통해서 초기화됨 
+	final boolean isKwang;
 	StudaCard5(int num, boolean isKwang)
 	{
 		this.num = num;
