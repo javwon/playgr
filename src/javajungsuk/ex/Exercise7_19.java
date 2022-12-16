@@ -34,8 +34,9 @@ class Buyer22{
 	}
 
 	void add(Product p) {
+		this.money -= p.price;
+		
 		if(i<this.cart.length) {
-			this.money -= p.price;
 			this.cart[i++]=p;
 		}
 		else {
@@ -46,7 +47,6 @@ class Buyer22{
 				cart[j]=this.cart[j];
 			}
 			cart[i++] =p;
-			this.money -= p.price;
 			this.cart=cart;
 		}
 		
