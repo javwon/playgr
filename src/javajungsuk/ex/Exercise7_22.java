@@ -10,6 +10,15 @@ public class Exercise7_22 {
 		System.out.printf("%.2f%n",cir1[0].calcArea());
 		System.out.println(cir1[0]);
 		System.out.println(cir1[1]);
+		Shape[] arr = {new Circle(1,1,5.0), new Rectangle(3,4),new Circle(1,1,1)};
+		System.out.println("면적의 합:"+sumArr(arr));
+	}
+
+	static double sumArr(Shape[] arr) {
+		double sum=0.0;
+		for(int i=0; i<arr.length;i++)
+			sum+=arr[i].calcArea();
+		return sum;
 	}
 
 }
