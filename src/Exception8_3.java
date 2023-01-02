@@ -1,53 +1,55 @@
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.IOException;
-
-
+import java.util.StringTokenizer;
 public class Exception8_3 {
 
 	
-		 public static void main(String[] args) throws IOException{
-		       	BufferedReader s = new BufferedReader(new InputStreamReader(System.in));
-		        String input = s.readLine();
-		        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		        bw.write(mostused(input));
-		        bw.flush();
-		        bw.close();
-		        
-		    }
-		   static char mostused(String str) {
-			   int[] arr = new int[26];
-			   int Max_value_index=0;
-			   
-			   //문자 더하기
-			   for(int i =0; i<str.length();i++)
-			   {	char ch = str.charAt(i);
-			   		if(ch>='a'&&ch<='z') arr[ch-'a']++;
-			   		if(ch>='A'&&ch<='Z') arr[ch-'A']++;
-				   //arr[str.toUpperCase().charAt(i)-'A']++; 얘가 범인!! 1
-			   }
-			   //Maxindex찾기
-			   for(int i=1;i<arr.length;i++)
-			   {
-					 
-				  if(arr[Max_value_index]<arr[i])
-				  {
-					  Max_value_index =i;
-				  }
-				  
-			   }
-			   //?찾기
-			   for(int i=0;i<arr.length;i++) {
-				   if(i!=Max_value_index) {
-					  if(arr[i]==arr[Max_value_index])
-						  return '?';
-				   }
-			   }
-			  
-			   return (char)(Max_value_index+'A');
-			   
-			   
-		   }
+		 public static void main(String[] args) throws IOException {
+		   BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		   String input = bf.readLine();
+		   StringTokenizer sz = new StringTokenizer(input," ");
+		   int x = Integer.parseInt(sz.nextToken());
+		   int y = Integer.parseInt(sz.nextToken());
+		   int w = Integer.parseInt(sz.nextToken());
+		   int h = Integer.parseInt(sz.nextToken());
+		   
+//		   BufferedWriter sw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		   sw.write(x);
+		   System.out.println(dis(x,y,w,h));
+//		   sw.flush();
+//		   sw.close();
+		      
+		 }
+		 static int dis(int x, int y, int w, int h) {
+			 short po1;
+			 short po2;
+			 //점 두개만 두고 비교할 것 x가 중간보다 크거나 작다.
+			 if(x<=(int)(w/2))
+			 {
+				 po1 = (short)x;
+				 //y가 중간보다 크거나 작다.
+				 if(y<=(int)(h/2)) {
+					 po2 = (short)y;
+				 }
+				 else po2=(short)(h-y);
+				 
+				 return (po1<po2) ? po1:po2; //둘 중 작은 값 리턴
+			 }
+			 else {
+				 po1 = (short)(w-x);
+				 
+				 if(y<=(int)(h/2)) {
+					 po2 = (short)y;
+				 }
+				 else po2=(short)(h-y);
+				 return (po1<po2) ? po1:po2;
+			 }
+			 
+		 }
+		  
+		  
 		}
