@@ -26,7 +26,7 @@ public class Exception8_3 {
 			   {	char ch = str.charAt(i);
 			   		if(ch>='a'&&ch<='z') arr[ch-'a']++;
 			   		if(ch>='A'&&ch<='Z') arr[ch-'A']++;
-				   //arr[str.toUpperCase().charAt(i)-'A']++; 얘가 범인!! 
+				   //arr[str.toUpperCase().charAt(i)-'A']++; 얘가 범인!! 1
 			   }
 			   //Maxindex찾기
 			   for(int i=1;i<arr.length;i++)
