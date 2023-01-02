@@ -4,52 +4,45 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 public class Exception8_3 {
 
-	
+	//배울점 있다.
 		 public static void main(String[] args) throws IOException {
-		   BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-		   String input = bf.readLine();
-		   StringTokenizer sz = new StringTokenizer(input," ");
-		   int x = Integer.parseInt(sz.nextToken());
-		   int y = Integer.parseInt(sz.nextToken());
-		   int w = Integer.parseInt(sz.nextToken());
-		   int h = Integer.parseInt(sz.nextToken());
-		   
-//		   BufferedWriter sw = new BufferedWriter(new OutputStreamWriter(System.out));
-//		   sw.write(x);
-		   System.out.println(dis(x,y,w,h));
-//		   sw.flush();
-//		   sw.close();
+		  BufferedReader b1 = new BufferedReader(new InputStreamReader(System.in));
+		  String input = b1.readLine();
+		  short n = Short.parseShort(input);
+		  double[] score = new double[n];
+		  input = b1.readLine();
+		  StringTokenizer sz = new StringTokenizer(input," ");
+		 
+		  //입력 값으로 배열 만들기
+		  int i=0;
+		  while(sz.hasMoreTokens()) {
+			 
+			  score[i++] = Short.parseShort(sz.nextToken());
+		  }
+//		  for(short i =0; i<sz.countTokens();i++) { 이놈은 잘 안된다.
+//			  score[i]=Short.parseShort(sz.nextToken());
+//		  }
+		 System.out.println(newAver(score));
+			 
 		      
 		 }
-		 static int dis(int x, int y, int w, int h) {
-			 short po1;
-			 short po2;
-			 //점 두개만 두고 비교할 것 x가 중간보다 크거나 작다.
-			 if(x<=(int)(w/2))
-			 {
-				 po1 = (short)x;
-				 //y가 중간보다 크거나 작다.
-				 if(y<=(int)(h/2)) {
-					 po2 = (short)y;
-				 }
-				 else po2=(short)(h-y);
-				 
-				 return (po1<po2) ? po1:po2; //둘 중 작은 값 리턴
+		 static double newAver(double[] score) {
+			
+			 short max_score =0;
+			 double sum=0;
+			 for(double x:score)
+			 {if(max_score<x)
+				 max_score=(short)x;
 			 }
-			 else {
-				 po1 = (short)(w-x);
-				 
-				 if(y<=(int)(h/2)) {
-					 po2 = (short)y;
+			 for(short x=0; x<score.length;x++)
+				 {score[x]=score[x]/max_score*100;
+				 	sum+=score[x];
 				 }
-				 else po2=(short)(h-y);
-				 return (po1<po2) ? po1:po2;
-			 }
 			 
+			 return sum/score.length;
 		 }
-		  
-		  
-		}
+}
