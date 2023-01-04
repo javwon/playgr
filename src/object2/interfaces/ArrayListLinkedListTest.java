@@ -7,27 +7,49 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class ArrayListLinkedListTest {
-
+	public static Stack back = new Stack();
+	public static Stack forward = new Stack();
 	public static void main(String[] args) {
+	//재밌다 혼자 해보기 
+	goURL("1.네이트");
+	goURL("2.야후");
+	goURL("3.네이버");
+	goURL("4.다음");
+	
+	printStatus();
+	
+	goBack(); // back에 있는 마지막 꺼내서 forward로 옮김 (후입선출)
+	System.out.println("뒤로가기 버튼 누름");
+	printStatus();
 		
-		Queue q = new LinkedList(); //shift + f2 Linkedlist가 queue구현
-		Stack s = new Stack();
+	goBack();
+	System.out.println("뒤로가기 버튼 누름");
+	printStatus();
+	
+	goForward(); // forward에 데이터 꺼내서 back으로 옮김
+	System.out.println("= 앞으로 가기 버튼 누른후=");
+	printStatus();
+	
+	goForward();
+	System.out.println("= 앞으로 가기 버튼 누른후=");
+	printStatus();
+	
+	}
+	private static void goForward() {
+		back.add(forward.pop());
 		
-		s.push("0");
-		s.push("1");
-		s.push("2");
+	}
+	private static void goBack() {
+		forward.add(back.pop());
 		
-		q.offer("0");
-		q.offer("1");
-		q.offer("2");
 		
-		System.out.println("=stack=");
-		while(!s.empty())
-			System.out.println(s.pop());
+	}
+	private static void printStatus() {
+		System.out.println(back.peek());
 		
-		System.out.println("=Queue");
-		while(!q.isEmpty())
-			System.out.println(q.poll());
+	}
+	private static void goURL(Object s) {
+		back.add(s);
 		
 	}
 
