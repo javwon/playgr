@@ -47,6 +47,8 @@ public class IteratorEx1 {
 			s4 = s.nextToken();
 		}
 		System.out.println(s1+s2+s3+s4);
+		
 	}
+	
 
 }
