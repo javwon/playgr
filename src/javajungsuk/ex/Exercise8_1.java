@@ -24,7 +24,7 @@ public class Exercise8_1 {
 	}
 	static void createNewFile(File f) throws Exception {
 		f.createNewFile();
-		
+		System.out.println("what?");
 	}
 
 }
