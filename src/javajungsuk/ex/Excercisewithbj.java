@@ -5,7 +5,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-
+import java.util.Arrays;
 import java.util.Vector;
 
 public class Excercisewithbj {
@@ -13,28 +13,27 @@ public class Excercisewithbj {
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		int[] numarr;
-		int max=0;
-		int min=0;
 		
-		int numofcount = Integer.parseInt(br.readLine());
-		String[] inputLine = br.readLine().split(" ");
-		numarr = new int[numofcount];
+		int[] arr = new int[30];
+		int[] notsubmit = new int[2];
 		
-		for(int i=0; i<numofcount;i++) {
-			numarr[i] = Integer.parseInt(inputLine[i]);
-			
-			if(i==0) {
-				min = numarr[i];
-				max= numarr[i];
-			}
-			else {
-			max = numarr[i]>max? numarr[i]:max;
-		    min = numarr[i]<min? numarr[i]:min;
-		    }
+		
+		
+		for(int i=0; i<28;i++) 
+		{	arr[Integer.parseInt(br.readLine())-1] =1;
+		 
 		}
-		bw.write(min+" "+max);
+		for(int i=0;i<30;i++) {
+			if(arr[i] != 1) {
+				if(notsubmit[0] ==0)notsubmit[0] =i+1;
+				else notsubmit[1] = i+1;
+			}
+		}
+		Arrays.sort(notsubmit);
 		
+		
+		bw.write(notsubmit[0]+""+"\n");
+		bw.write(notsubmit[1]+"");
 		
 		
 		bw.flush();
