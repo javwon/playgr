@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class ioex2 {
 
 	public static void main(String[] args) {
-		byte[] intsrc = {0,1,2,3,4,5,6,7,8,9};
+		byte[] intsrc = {0,1,2,3,4,5,6,11,8,9};
 		byte[] outsrc = null;
 		
 		ByteArrayInputStream input =null;

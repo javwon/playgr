@@ -7,8 +7,8 @@ public class ioex7 {
 		//FileInputStream fis = new FileInputStream(path);
 		FileOutputStream fos = new FileOutputStream(path);
 		BufferedOutputStream bos = new BufferedOutputStream(fos,5);
-		for(int i='1';i<='9';i++) {bos.write(i);}
-		
+		for(int i='1';i<='2';i++) {bos.write(i);}
+		bos.flush();
 		fos.close();
 		}catch(IOException e) {e.printStackTrace();}
 	}

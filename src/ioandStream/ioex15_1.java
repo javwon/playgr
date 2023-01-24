@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class ioex15_1 {
 
 	public static void main(String[] args) {
-		byte[] insrc = {0,1,2,3,4,5,6,7,8,9};
+		byte[] insrc = new byte[100];
 		byte[] outsrc = null;
 		byte[] temp = new byte[4];
 		
@@ -13,10 +13,11 @@ public class ioex15_1 {
 		
 		input =new ByteArrayInputStream(insrc);
 		output = new ByteArrayOutputStream();
-		
+		int watch;
 		try {
-			while(input.available()>0) {
-				int len = input.read(temp);
+			while((watch=input.available())>0) {
+				System.out.println(watch);
+				int len = input.read(temp); //여기서 temp크기에 맞게
 				output.write(temp,0,len);
 			}
 		}catch(IOException e) {}
